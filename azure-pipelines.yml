@@ -21,7 +21,8 @@ steps:
   displayName: 'npm install and build'
 - task: PublishBuildArtifacts@1
   inputs: 
-    pathtoPublish: $(build.artifactstagingdirectory) # dist or build files
+    pathtoPublish: $(build.artifactstagingdirectory)
+    
 - script: |
     npm install webpack webpack-cli --save-dev
     npx webpack --config webpack.config.js
